@@ -1,25 +1,13 @@
-// Timer begins at five minutes after start is pressed on start screen 
-function startTimer(duration, display) {
-    var timer = duration, minutes, seconds;
-    setInterval(function () {
-        minutes = parseInt(timer / 60, 10);
-        seconds = parseInt(timer % 60, 10);
+// Timer section which will be called upon wrong answer
 
-        minutes = minutes < 10 ? "0" + minutes : minutes;
-        seconds = seconds < 10 ? "0" + seconds : seconds;
+var sec = 90;
+var time = setInterval(myTimer, 1000);
 
-        display.textContent = minutes + ":" + seconds;
-
-        if (--timer < 0) {
-            timer = duration;
-        }
-    }, 1000);
-}
-
-window.onload = function () {
-    var fiveMinutes = 60 * 5,
-        display = document.querySelector('#time');
-    startTimer(fiveMinutes, display);
-};
-
-
+function myTimer() {
+    document.getElementById('timer').innerHTML = sec + "sec left";
+    sec--;
+    if (sec == -1) {
+        clearInterval(time);
+        alert("You lose!! :(");
+    }
+}    
