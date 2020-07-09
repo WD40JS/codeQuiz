@@ -7,4 +7,6 @@ Amended timer to countdown with less time for a wrong answer.
 I couldn't affect the timer and keep it consistently on-screen so I used a link technique to give less time upon incorrectly answering.
 Added start screen that link to first countdown page.
 Linked to second countdown page if incorrect 
+Added win screen.
+Added lose screen and linked approprite questions to it.
 
